@@ -1,0 +1,46 @@
+Algoritmo sin_titulo
+	// Creamos una variable que incluira el mensaje 
+	transformar_mensaje <- mensaje
+	// Definimos dos arrays para guardar las letras del principio y de su final
+	Definir array_inicial Como Caracter
+	Definir array_final Como Caracter
+	Si j = 2 % 0 Entonces
+		array_inicial <- Concatenar(array_inicial,Subcadena,j,1)
+		// Si es par pasara por  aqui
+	SiNo
+		array_final <- Concatenar(array_final,Subcadena,j,1)
+		// Si es impar pasara por  aqui
+	FinSi
+	// Recorrer cada caracter en 'primeraEQ'
+	Para i<-1 Hasta Longitud(primeraEQ) Hacer
+		// Si el caracter actual está en 'vocales'
+		Si Pertenece[Subcadena(primeraEQ,i,1),vocales] Entonces
+			// Si 'conso' no está vacío, invierte su contenido y agrega al 'original'
+			Si Longitud(conso)>0 Entonces
+				conso <- InvertirCadena[conso]
+				original <- Concatenar(original,conso)
+			FinSi
+			// Agrega el caracter actual al 'original'
+			original <- Concatenar(original,Subcadena(primeraEQ,i,1))
+			// Reinicia el contador de consonantes 'cont' y el array 'conso'
+			cont <- 0
+			conso <- ''
+		SiNo
+			// Si el caracter actual no es una vocal
+			cont <- cont+1
+			Si cont=1 Entonces
+				// Si es la primera consonante de una cadena de consonantes, decide si agregarla a 'original' o 'conso'
+				Si Pertenece[Subcadena(primeraEQ,i+1,1),vocales] Entonces
+					original <- Concatenar(original,Subcadena(primeraEQ,i,1))
+				SiNo
+					conso <- Concatenar(conso,Subcadena(primeraEQ,i,1))
+				FinSi
+			SiNo
+				// Si no es la primera consonante, agrega el caracter a 'conso'
+				conso <- Concatenar(conso,Subcadena(primeraEQ,i,1))
+			FinSi
+		FinSi
+	FinPara
+	// Mostrar el resultado final
+	Escribir 'El resultado es: ',original
+FinAlgoritmo
