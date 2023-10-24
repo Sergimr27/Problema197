@@ -83,7 +83,7 @@ function transformarMensaje2(mensaje) {
 }
 
 // Definimos un mensaje 
-const mensaje1 = "Anuel es mejor que Feid";
+const mensaje1 = "BnodJo s, dBneam";
 // funciones de transformación 
 const mensajeTransformado1 = transformarMensaje1(mensaje1);
 const mensajeTransformado2 = transformarMensaje2(mensaje1);
